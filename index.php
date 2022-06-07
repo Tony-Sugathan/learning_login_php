@@ -5,16 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <link rel="stylesheet" type="text/css" href ="style.css">
+    <link rel="stylesheet" type="text/css" href ="style3.css">
 </head>
 <body>
     <form action="login.php" method="post">
         <h2> LOGIN </h2>
+        <?php if(isset($_GET['error'])){?>
+            <p class="error"><?php echo $_GET['error']; ?> </p>
+        <?php } ?>
+
         <label> User Name</label>
-        <input type="text" name="name" placeholder="User name">
+        <input type="text" name="uname" placeholder="User name">
 
         <label> Password</label>
-        <input type="text" name="password" placeholder="Password">
+        <input type="password" name="pass" placeholder="Password">
         
         <button type="submit"> Login </button>
     </form>
